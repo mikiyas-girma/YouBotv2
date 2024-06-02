@@ -1,4 +1,4 @@
-from main_bot import bot
+from youbot import bot
 from telebot.types import (ReplyKeyboardMarkup, KeyboardButton,
                            InlineKeyboardButton, InlineKeyboardMarkup)
 from models.engine.storage import SessionLocal
@@ -9,8 +9,6 @@ from models.asked import Asked
 name = 'Anonymous'
 first_name = 'Anonymous'
 last_name = 'Anonymous'
-
-bot = bot.bot
 
 
 def answer_callback(message):

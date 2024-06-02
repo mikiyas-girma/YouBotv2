@@ -1,9 +1,8 @@
-from main_bot import bot
+from youbot import bot
 from telebot.types import (ForceReply, KeyboardButton,
                            InlineKeyboardButton, InlineKeyboardMarkup)
 from models.engine.storage import SessionLocal
 from models.user import User
-from sqlalchemy import func
 from models.question import Question
 from models.answer import Answer
 from handlers.message_handlers import send_welcome, create_answer_keyboard
@@ -11,8 +10,6 @@ from handlers.message_handlers import send_welcome, create_answer_keyboard
 name = 'Anonymous'
 first_name = 'Anonymous'
 last_name = 'Anonymous'
-
-bot = bot.bot
 
 
 @bot.message_handler(func=lambda message: message.text == '👤 Profile')
@@ -33,10 +30,8 @@ def profile(message):
         print('User exists')
         name = user.name
         reputation = user.reputation
-        followers = session.query(func.array_length(User.followers, 1)).\
-            filter_by(telegram_id=message.chat.id).count()
-        following = session.query(func.array_length(User.following, 1)).\
-            filter_by(telegram_id=message.chat.id).count()
+        followers = len(user.followers.split(',')) if user.followers else 0
+        following = len(user.following.split(',')) if user.following else 0
         date_joined = user.date_joined
         num_questions = session.query(Question).filter_by(
             user_id=message.chat.id).count()

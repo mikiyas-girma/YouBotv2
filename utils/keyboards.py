@@ -1,4 +1,4 @@
-from main_bot import bot
+from youbot import bot
 import telebot
 
 from telebot.types import (ReplyKeyboardMarkup, KeyboardButton,

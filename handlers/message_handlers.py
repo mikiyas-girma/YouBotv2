@@ -1,29 +1,21 @@
-from sqlalchemy import select
-from main_bot import bot
+from youbot import bot
 from telebot.types import (ReplyKeyboardMarkup, KeyboardButton,
                            InlineKeyboardButton, InlineKeyboardMarkup)
-from telebot.util import quick_markup
 from models.engine.storage import SessionLocal
 from models.user import User
 from models.states import State
 from models.question import Question
-# from models.admin_message import AdminMessage
-from telebot.types import Message, Chat
 import os
 from handlers.answer_to import answer_callback
 from handlers.browse_anwers import browse_callback
-from models.answer import Answer
 from models.asked import Asked
-from hashlib import sha256
 
-ADMIN_CHANNEL_ID = os.getenv('ADMIN_CHANNEL_ID')
-PUBLIC_CHANNEL_ID = os.getenv('PUBLIC_CHANNEL_ID')
+ADMIN_CHANNEL_ID = '-1002221674356'
+PUBLIC_CHANNEL_ID = '-1002234445767'
 
 name = 'Anonymous'
 first_name = 'Anonymous'
 last_name = 'Anonymous'
-
-bot = bot.bot
 
 
 @bot.message_handler(func=lambda message: message.text == 'Cancel')

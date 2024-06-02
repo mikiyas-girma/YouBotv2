@@ -1,10 +1,9 @@
-from main_bot import bot
+from youbot import bot
 from telebot.types import (ReplyKeyboardMarkup, KeyboardButton,  # noqa
                            InlineKeyboardButton, InlineKeyboardMarkup)  # noqa
 from models.engine.storage import SessionLocal
 from models.states import State
 
-bot = bot.bot
 
 CHECKED = '✅'
 UNCHECKED = ' '

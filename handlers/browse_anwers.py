@@ -1,4 +1,4 @@
-from main_bot import bot
+from youbot import bot
 from telebot.types import (ReplyKeyboardMarkup, KeyboardButton,
                            InlineKeyboardButton, InlineKeyboardMarkup)
 from models.engine.storage import SessionLocal
@@ -7,7 +7,6 @@ from models.answer import Answer
 from models.asked import Asked
 from models.user_reaction import UserReaction
 from collections import deque
-bot = bot.bot
 
 username = 'Anonymous'
 first_name = 'Anonymous'

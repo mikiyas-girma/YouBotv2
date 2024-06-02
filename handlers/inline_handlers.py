@@ -2,9 +2,7 @@
 # import requests
 import logging
 from telebot import types
-from main_bot import bot
-
-bot = bot.bot
+from youbot import bot
 
 
 @bot.inline_handler(lambda query: query.query == 'miki')

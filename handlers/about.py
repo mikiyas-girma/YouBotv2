@@ -1,10 +1,8 @@
-from main_bot import bot
+from youbot import bot
 from telebot.types import (ReplyKeyboardMarkup, KeyboardButton,
                            InlineKeyboardButton, InlineKeyboardMarkup)
 from models.engine.storage import SessionLocal
 from handlers.message_handlers import send_welcome
-
-bot = bot.bot
 
 
 @bot.message_handler(func=lambda message: message.text == '➡️ More')

@@ -3,9 +3,9 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 import os
 
 
-URL = os.getenv('DB_URL')
+DB_URL = 'mysql+mysqldb://mike:Mm001122@localhost/youbotdb'
 
-engine = create_engine(URL, echo=True)
+engine = create_engine(DB_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()

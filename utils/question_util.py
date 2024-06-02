@@ -1,4 +1,4 @@
-from main_bot import bot
+from youbot import bot
 from models.engine.storage import SessionLocal
 from models.question import Question
 import os

@@ -1,10 +1,8 @@
-from main_bot import bot
+from youbot import bot
 from telebot.types import (InlineKeyboardMarkup,
                            InlineKeyboardButton,
                            SwitchInlineQueryChosenChat)
 from telebot.util import quick_markup
-
-bot = bot.bot
 
 
 @bot.message_handler(commands=['social'])
